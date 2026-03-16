@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Absensi Desa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>ABSENSI KANTOR DESA</h2>
+
+<input type="text" id="nama" placeholder="Masukkan Nama">
+<br><br>
+<button onclick="login()">Masuk</button>
+
+<script>
+function login(){
+let nama=document.getElementById("nama").value;
+if(nama==""){
+alert("Isi Kudai Namo");
+return;
+}
+localStorage.setItem("pegawai",nama);
+window.location.href="dashboard.html";
+}
+</script>
+
+</body>
+</html>

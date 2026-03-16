@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Absensi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="img/logo-desa.png" class="logo">
+
+<h2>DATA ABSENSI</h2>
+
+<table id="tabel">
+
+<tr>
+<th>Nama</th>
+<th>Status</th>
+<th>Waktu</th>
+</tr>
+
+</table>
+
+<br>
+
+<button onclick="window.location.href='dashboard.html'">
+Kembali
+</button>
+
+</div>
+
+<script>
+let data = JSON.parse(localStorage.getItem("dataAbsensi")) || [];
+
+let tabel = document.getElementById("tabel");
+
+data.forEach(item=>{
+
+let row = tabel.insertRow();
+
+row.insertCell(0).innerHTML=item.nama;
+row.insertCell(1).innerHTML=item.status;
+row.insertCell(2).innerHTML=item.waktu;
+
+});
+</script>
+
+</body>
+</html>
